@@ -17,7 +17,7 @@ import {
 
 const router = createBrowserRouter([
   {
-    path: "/login",
+    path: "/",
     element: <App />,
   },
   {
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
     element: <Registration />,
   },
   {
-    path: "/",
+    path: "/login",
     element: <Login />,
   },
 ]);

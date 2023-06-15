@@ -5,7 +5,7 @@ import Navbar from './common/navbar/Navbar'
 import Rating from './components/rating/Rating'
 import CardList from './components/Card/CardList'
 
-function App() {
+function App() { 
 
   return (
     <>
