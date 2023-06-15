@@ -1,0 +1,66 @@
+const Rdata = [
+  {
+    id: 1,
+    title: "Math Game",
+    img: "mathgame.png",
+    rating: "(4.0)",
+    back: "Information about this game",
+  },
+  {
+    id: 2,
+    title: "Math Game",
+    img: "add.jpg",
+    rating: "(5.0)",
+    back: "Information about this game",
+  },
+  {
+    id: 3,
+    title: "Math Game",
+    img: "calculate.png",
+    rating: "(4.5)",
+    back: "Information about this game",
+  },
+  {
+    id: 4,
+    title: "Math Game",
+    img: "mathgame.png",
+    rating: "(5.0)",
+    back: "Information about this game",
+  },
+  {
+    id: 5,
+    title: "Math Game",
+    img: "mathgame.png",
+    rating: "(3.5)",
+    back: "Information about this game",
+  },
+  {
+    id: 6,
+    title: "Math Game",
+    img: "mathgame.png",
+    rating: "(4.0)",
+    back: "Information about this game",
+  },
+  {
+    id: 7,
+    title: "Math Game",
+    img: "mathgame.png",
+    rating: "(5.0)",
+    back: "Information about this game",
+  },
+  {
+    id: 8,
+    title: "Math Game",
+    img: "mathgame.png",
+    rating: "(4.5)",
+    back: "Information about this game",
+  },
+  {
+    id: 9,
+    title: "Math Game",
+    img: "mathgame.png",
+    rating: "(3.0)",
+    back: "Information about this game",
+  },
+]
+export default Rdata
