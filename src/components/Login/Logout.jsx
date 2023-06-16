@@ -1,15 +1,12 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-const Logout = () => {
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    localStorage.setItem("user", "");
-    navigate("/login");
-  }, [navigate]);
-
-  return null;
+const Logout = ({ onLogout }) => {
+  return (
+    <button onClick={onLogout}>Logout</button>
+  );
 };
-
+Logout.propTypes = {
+    onLogout: PropTypes.func.isRequired,
+  };
 export default Logout;

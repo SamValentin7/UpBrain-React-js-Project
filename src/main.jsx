@@ -1,11 +1,11 @@
 import { createRoot } from 'react-dom/client'
 import App from './App'
 import About from './pages/about/About'
-import Login from './login/Login'
+import Login from './components/Login/Login'
 import Contact from './pages/contact/Contact'
 import Games from './pages/games/Games'
 import Payment from './pages/payment/Payment'
-import Registration from './components/Login/Registration'
+import Registration from './components/LoginOld/Registration'
 import './index.css'
 
 
