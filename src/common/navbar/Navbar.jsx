@@ -1,24 +1,27 @@
-import { useState } from 'react';
+// Navbar.js
+
+import {useState, useEffect } from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
 import Logout from '../../components/Login/Logout';
-import { GoogleLogin } from 'react-google-login';
 
 const Navbar = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [userImage, setUserImage] = useState('');
 
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+      const user = JSON.parse(loggedInUser);
+      setLoggedIn(true);
+      setUserImage(user.imageUrl);
+    }
+  }, []);
+
   const handleLogout = () => {
     setLoggedIn(false);
     setUserImage('');
-  };
-
-  const handleLogin = (response) => {
-    const { profileObj } = response;
-    setLoggedIn(true);
-    setUserImage(profileObj.imageUrl);
-    console.log(profileObj);
-    console.log(response);
+    localStorage.removeItem('loggedInUser');
   };
 
   return (
