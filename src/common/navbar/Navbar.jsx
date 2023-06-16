@@ -2,6 +2,7 @@ import {useState, useEffect } from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
 import Logout from '../../components/Login/Logout';
+import Login from '../../components/Login/Login';
 
 const Navbar = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -35,7 +36,7 @@ const Navbar = () => {
           {loggedIn ? (
               <li><Logout onLogout={handleLogout} /></li>
           ) : (
-            <li><Link to="/login">LOG IN</Link></li>
+            <li><Login/></li>
           )}
         </ul>
       </div>

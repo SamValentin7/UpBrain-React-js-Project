@@ -81,3 +81,13 @@
   background-color: #3b5fff;
   color: #fff;
 }
+
+.gap{
+    margin: 40px;
+}
+.login-btn{
+    color: #fff;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
