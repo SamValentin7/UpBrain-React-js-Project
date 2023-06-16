@@ -5,6 +5,24 @@ const Comment = ({ comment, onEdit, onDelete }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [editedContent, setEditedContent] = useState(comment.attributes.content);
 
+    const isCurrentUserAdmin = () => {
+        const loggedInUser = localStorage.getItem('loggedInUser');
+        if (loggedInUser) {
+            const user = JSON.parse(loggedInUser);
+            return user.email === 'samciucov.valentin@gmail.com';
+        }
+        return false;
+    };
+
+    const isCurrentUserComment = () => {
+        const loggedInUser = localStorage.getItem('loggedInUser');
+        if (loggedInUser) {
+            const user = JSON.parse(loggedInUser);
+            return user.name === comment.attributes.username;
+        }
+        return false;
+    };
+
     const handleEdit = () => {
         setIsEditing(!isEditing);
     };
@@ -56,16 +74,18 @@ const Comment = ({ comment, onEdit, onDelete }) => {
                 ) : (
                     <div className="comment-text">{comment.attributes.content}</div>
                 )}
-                <div className="comment-actions">
-                    {!isEditing && (
-                        <div className="comment-action" onClick={handleEdit}>
-                            Edit
+                {(isCurrentUserAdmin() || isCurrentUserComment()) && (
+                    <div className="comment-actions">
+                        {!isEditing && (
+                            <div className="comment-action" onClick={handleEdit}>
+                                Edit
+                            </div>
+                        )}
+                        <div className="comment-action" onClick={handleDelete}>
+                            Delete
                         </div>
-                    )}
-                    <div className="comment-action" onClick={handleDelete}>
-                        Delete
                     </div>
-                </div>
+                )}
             </div>
         </div>
     );
