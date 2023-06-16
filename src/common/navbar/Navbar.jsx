@@ -1,5 +1,3 @@
-// Navbar.js
-
 import {useState, useEffect } from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
@@ -14,7 +12,7 @@ const Navbar = () => {
     if (loggedInUser) {
       const user = JSON.parse(loggedInUser);
       setLoggedIn(true);
-      setUserImage(user.imageUrl);
+      setUserImage(user.picture);
     }
   }, []);
 
@@ -35,14 +33,9 @@ const Navbar = () => {
           <li><Link to="/contact">CONTACT</Link></li>
           <li><Link to="/games">GAMES</Link></li>
           {loggedIn ? (
-            <>
-              <li>
-                <img src={userImage} alt="User Profile" />
-              </li>
               <li><Logout onLogout={handleLogout} /></li>
-            </>
           ) : (
-            <li><Link to="/login">Log In</Link></li>
+            <li><Link to="/login">LOG IN</Link></li>
           )}
         </ul>
       </div>
