@@ -5,7 +5,6 @@ import Login from './components/Login/Login'
 import Contact from './pages/contact/Contact'
 import Games from './pages/games/Games'
 import Payment from './pages/payment/Payment'
-import Registration from './components/LoginOld/Registration'
 import './index.css'
 
 
@@ -35,15 +34,6 @@ const router = createBrowserRouter([
   {
     path: "paypal",
     element: <Payment />,
-  },
-  
-  {
-    path: "registration",
-    element: <Registration />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
   },
 ]);
 

@@ -17,7 +17,6 @@ const About = () => {
         try {
             const response = await axios.get(`${import.meta.env.VITE_API_URL}about-dates`);
             setAboutDates(response.data.data);
-            console.log(response)
         } catch (e) {
             console.log(e);
         }

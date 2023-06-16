@@ -13,7 +13,6 @@ const Rating = () => {
         try {
             const response = await axios.get(`${import.meta.env.VITE_API_URL}rating-dates`);
             setRatingDates(response.data.data);
-            console.log(response)
         } catch (e) {
             console.log(e);
         }

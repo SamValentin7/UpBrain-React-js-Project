@@ -15,7 +15,6 @@ const CommentSection = () => {
         try {
             const response = await axios.get(`${import.meta.env.VITE_API_URL}user-comments`);
             setComments(response.data.data);
-            console.log(response);
         } catch (error) {
             console.error('Error fetching comments:', error);
         }
@@ -29,7 +28,6 @@ const CommentSection = () => {
                 data: comment
             });
             setComments([...comments, response.data.data]);
-            console.log(response);
         } catch (error) {
             console.error('Error adding comment:', error);
         }

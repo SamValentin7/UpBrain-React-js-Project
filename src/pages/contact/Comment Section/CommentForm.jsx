@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Popup from 'reactjs-popup';
 
 const CommentForm = ({ onSubmit, handleCancel, initialContent }) => {
     const [username, setUsername] = useState('');
@@ -6,28 +7,27 @@ const CommentForm = ({ onSubmit, handleCancel, initialContent }) => {
 
     useEffect(() => {
         setContent(initialContent);
+        const loggedInUser = localStorage.getItem('loggedInUser');
+        if (loggedInUser) {
+            const user = JSON.parse(loggedInUser);
+            setUsername(user.name);
+        }
     }, [initialContent]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        if (username.trim() === '' || content.trim() === '') {
+        if (content === '') {
+            return;
+        }
+        if (username === '') {
             return;
         }
         onSubmit({ username, content });
-
-        setUsername('');
         setContent('');
     };
 
     return (
         <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-            />
             <textarea
                 className="comment-form-textarea"
                 placeholder="Comment"
@@ -35,10 +35,29 @@ const CommentForm = ({ onSubmit, handleCancel, initialContent }) => {
                 onChange={(e) => setContent(e.target.value)}
             />
             <div className="comment-form-buttons">
-                <button className="comment-form-button" type="submit">
-                    Submit
-                </button>
-                
+                {username !== '' ? (
+                    <button className="comment-form-button" type="submit">
+                        Submit
+                    </button>
+                ) : (
+                    <Popup
+                        trigger={<button className="comment-form-button">Submit</button>}
+                        modal
+                        nested
+                    >
+                        {(close) => (
+                            <div className="modal">
+                                <button className="close" onClick={close}>
+                                    &times;
+                                </button>
+                                <div className="content">
+                                    <h3>Must Log In First</h3>
+                                    <p>Join us and log in for an amazing experience!</p>
+                                </div>
+                            </div>
+                        )}
+                    </Popup>
+                )}
             </div>
         </form>
     );

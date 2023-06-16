@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
-import Navbar from '../../common/navbar/Navbar';
 import Popup from 'reactjs-popup';
 import jwt_decode from 'jwt-decode';
 
@@ -8,7 +6,7 @@ const Login = () => {
     const handleLoginSuccess = (credentialResponse) => {
         const details = jwt_decode(credentialResponse.credential);
         localStorage.setItem('loggedInUser', JSON.stringify(details));
-        window.location.href = '/';
+        window.location.reload();
         //console.log(details);
     };
 

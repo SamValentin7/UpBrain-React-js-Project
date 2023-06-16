@@ -15,7 +15,6 @@ const CardList = () => {
         try {
             const response = await axios.get(`${import.meta.env.VITE_API_URL}data-carousels`);
             setdataCarousel(response.data.data);
-            console.log(response)
         } catch (e) {
             console.log(e);
         }
