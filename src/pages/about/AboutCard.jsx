@@ -32,7 +32,7 @@ const AboutCard = ({ props }) => {
       {
         props.map(data => (
           <div data-aos={selectedEffect} className="data-container" key={data.id}>
-            <img src={`public/assets/images/About Images/${data.attributes.img}.png`} />
+            <img src={`assets/images/About Images/${data.attributes.img}.png`} />
             <div className="text" >
               <h2>{data.attributes.header}</h2>
               <p>{data.attributes.body}</p>
