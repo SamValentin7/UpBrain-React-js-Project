@@ -7,7 +7,7 @@ const RatingCard = ({ props }) => {
             {props.map(data => {
                 return (
                     <div className="testimonial-col" key={data.id}>
-                        
+
                         <div>
                             <p>{data.attributes.comment}</p>
                             <img src={`public/assets/images/Rating Images/${data.attributes.img}.png`} />

@@ -28,7 +28,7 @@ const AboutCard = ({ props }) => {
   }, []);
 
   return (
-    <div  className="about-container">
+    <div className="about-container">
       {
         props.map(data => (
           <div data-aos={selectedEffect} className="data-container" key={data.id}>

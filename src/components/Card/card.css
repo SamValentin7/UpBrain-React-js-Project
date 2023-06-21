@@ -6,10 +6,12 @@
     background-color: #ffffff;
     margin-top: 30px;
 }
-.card-list{
+
+.card-list {
     margin-left: 20px;
     margin-right: 20px;
 }
+
 .card {
     width: 225px;
     height: 320px;
@@ -23,6 +25,7 @@
     perspective: 1000px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .card-front,
 .card-back {
     width: 100%;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Popup from 'reactjs-popup';
+import './comments.css'
 
 const CommentForm = ({ onSubmit, handleCancel, initialContent }) => {
     const [username, setUsername] = useState('');
@@ -29,8 +30,8 @@ const CommentForm = ({ onSubmit, handleCancel, initialContent }) => {
     return (
         <form onSubmit={handleSubmit}>
             <textarea
-                className="comment-form-textarea"
-                placeholder="Comment"
+                className="comment-form-textarea indent-textarea"
+                placeholder=" Comment"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
             />

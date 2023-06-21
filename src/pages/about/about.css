@@ -4,18 +4,21 @@
   background-color: #ffffff;
   margin-top: 30px;
 }
-.data-container{
+
+.data-container {
   display: flex;
   align-items: flex-start;
   border-bottom: 1px solid #ccc;
   padding: 25px;
   margin: auto;
 }
+
 @media(max-width: 700px) {
   .container {
     width: 95%;
   }
 }
+
 .about-container:last-child {
   border-bottom: none;
   padding-bottom: 0;

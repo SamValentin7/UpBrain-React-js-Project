@@ -21,6 +21,8 @@
     margin-bottom: 8px;
     margin-top: 8px;
     border: 1px solid rgb(107, 114, 12);
+    padding-left: 8px;
+    padding-top: 4px;
 }
 
 .comment-form-button {

@@ -82,12 +82,13 @@
   color: #fff;
 }
 
-.gap{
-    margin: 40px;
+.gap {
+  margin: 40px;
 }
-.login-btn{
-    color: #fff;
-    border: none;
-    background: none;
-    cursor: pointer;
+
+.login-btn {
+  color: #fff;
+  border: none;
+  background: none;
+  cursor: pointer;
 }

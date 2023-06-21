@@ -30,7 +30,7 @@ const About = () => {
         <div>
             <Navbar />
             <div className="container">
-                <AboutCard props = {aboutDates}/>
+                <AboutCard props={aboutDates} />
             </div>
             <Footer />
         </div>

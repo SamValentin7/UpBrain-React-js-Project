@@ -21,14 +21,14 @@ const Rating = () => {
     useEffect(() => {
         getRatingDates();
     }, [])
-    
+
     return (
         <div className="testimonials">
             <h1>1 year, 10 million members</h1>
             <p>With our exceptional quality and user-friendly interface, <br />our gaming website has earned a well-deserved spot among the top-rated and most popular in the industry.</p>
 
             <div className="row">
-                <RatingCard props = {ratingDates}/>
+                <RatingCard props={ratingDates} />
             </div>
         </div>
     )

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './comments.css'
 
 const Comment = ({ comment, onEdit, onDelete }) => {
     const createdAt = new Date(comment.attributes.createdAt).toLocaleDateString();

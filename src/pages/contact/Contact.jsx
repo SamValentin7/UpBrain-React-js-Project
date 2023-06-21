@@ -1,7 +1,6 @@
 import Navbar from '../../common/navbar/Navbar'
 import Footer from '../../common/footer/Footer'
 import './contact.css'
-import './comments/comments.css'
 import ContactTools from './ContactTools'
 import CommentSection from './Comment Section/CommentSection'
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
+import './comments.css';
 
 const CommentSection = () => {
     const [comments, setComments] = useState([]);
@@ -27,7 +28,7 @@ const CommentSection = () => {
             const response = await axios.post(`${import.meta.env.VITE_API_URL}user-comments`, {
                 data: comment
             });
-            setComments([...comments, response.data.data]);
+            setComments(prevComments => [...prevComments, response.data.data]);
         } catch (error) {
             console.error('Error adding comment:', error);
         }
@@ -40,11 +41,14 @@ const CommentSection = () => {
             await axios.put(`${import.meta.env.VITE_API_URL}user-comments/${id}`, {
                 data: updatedComment
             });
-            const updatedComments = comments.map(comment =>
-                comment.id === id ? { ...comment, ...updatedComment } : comment
-            );
             
-            setComments(updatedComments);
+            setComments(prevComments => {
+                const updatedComments = prevComments.map(comment =>
+                    comment.id === id ? { ...comment, ...updatedComment } : comment
+                );
+                return updatedComments;
+            });
+            window.location.reload();
         } catch (error) {
             console.error('Error editing comment:', error);
         }

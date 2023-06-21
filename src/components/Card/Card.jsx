@@ -37,7 +37,7 @@ const Card = ({ props }) => {
                         <div className="card-back-content">
                             <p>{data.attributes.back}</p>
                             <button className="play-btn">
-                                <Link to="/games" style={{ textDecoration: 'none', color: 'white'}}>Play</Link>
+                                <Link to="/games" style={{ textDecoration: 'none', color: 'white' }}>Play</Link>
                             </button>
                         </div>
                     </div>
